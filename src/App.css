@@ -1,0 +1,75 @@
+#root {
+  display: flex;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark theme (default) */
+.theme-dark {
+  background-color: #242424;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+/* Light theme */
+.theme-light {
+  background-color: #ffffff;
+  color: #213547;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: 250px;
+  margin-right: 250px;
+  overflow-y: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2rem;
+  padding-top: 2rem;
+}
+
+.content-section {
+  max-width: 1000px;
+  text-align: center;
+}
+
+.content-section h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.home-logo {
+  width: 600px;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 0rem;
+  transition: filter 0.3s ease;
+}
+
+/* Logo inverted to white in dark theme */
+.theme-dark .home-logo {
+  filter: brightness(0) invert(1);
+}
+
+/* Logo stays black in light theme */
+.theme-light .home-logo {
+  filter: none;
+}
+
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 2rem;
+  }
+}

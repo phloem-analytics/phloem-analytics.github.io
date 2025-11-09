@@ -1,16 +1,108 @@
-# React + Vite
+# Phloem Analytics Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Official website for Phloem Analytics, built with React and Vite, hosted on GitHub Pages.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Single Page Application**: Client-side routing using React state management
+- **Dark/Light Theme**: Theme toggle with persistent preference
+- **Responsive Design**: Mobile-friendly layout with adaptive navigation
+- **Reports System**: Dynamic report loading with individual JSX files for easy content management
 
-## React Compiler
+## Development
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Installation
+```bash
+npm install
+```
 
-## Expanding the ESLint configuration
+### Development Server
+```bash
+npm run dev
+```
+Starts the Vite development server with HMR at http://localhost:5173
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Building
+```bash
+npm run build
+```
+Builds the application for production into the `dist` directory.
+
+### Preview Production Build
+```bash
+npm run preview
+```
+Locally preview the production build.
+
+### Linting
+```bash
+npm run lint
+```
+Run ESLint to check code quality.
+
+### Deployment
+```bash
+npm run deploy
+```
+Deploys the application to GitHub Pages. Automatically builds before deploying.
+
+## Project Structure
+
+```
+src/
+├── components/         # React components
+│   ├── App.jsx        # Main app component with routing
+│   ├── Sidebar.jsx    # Navigation sidebar
+│   ├── Home.jsx       # Home page
+│   ├── About.jsx      # About page
+│   ├── Reports.jsx    # Reports list/detail view
+│   └── Contact.jsx    # Contact page
+├── data/
+│   └── reports/       # Individual report files (auto-loaded)
+├── styles/            # Component-specific CSS
+│   ├── Sidebar.css
+│   └── Reports.css
+├── assets/            # Static assets (images, logos)
+├── App.css            # Main app styles
+├── index.css          # Global styles
+└── main.jsx           # App entry point
+```
+
+## Adding New Reports
+
+Reports are automatically loaded from `/src/data/reports/`. To add a new report:
+
+1. Create a new `.jsx` file in `/src/data/reports/`
+2. Export a default object with this structure:
+
+```javascript
+export default {
+  id: 'unique-report-id',
+  title: 'Report Title',
+  shortDescription: 'Brief description for the list view',
+  date: 'YYYY-MM-DD',
+  image: '/images/reports/thumbnail.png',
+  pdfPath: '/reports/report-name.pdf',
+
+  content: () => (
+    <>
+      <p>Your report content here...</p>
+      <h3>Sections</h3>
+      {/* You can include React components, charts, etc. */}
+    </>
+  )
+}
+```
+
+3. The report will automatically appear in the Reports section (sorted by date)
+
+## Tech Stack
+
+- **React 19.1.1** - UI framework
+- **Vite 7.1.7** - Build tool and dev server
+- **ESLint** - Code linting
+- **gh-pages** - GitHub Pages deployment
+
+## License
+
+MIT

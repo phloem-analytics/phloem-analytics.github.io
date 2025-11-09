@@ -27,13 +27,15 @@
 .main-content {
   flex: 1;
   margin-left: 250px;
-  margin-right: 250px;
+  margin-right: 0;
   overflow-y: auto;
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding: 2rem;
+  padding-left: 2rem;
+  padding-right: calc(250px + 2rem);
   padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .content-section {

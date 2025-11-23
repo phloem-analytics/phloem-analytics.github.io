@@ -6,7 +6,7 @@ function About() {
       <img src={phloemLogo} className="home-logo" alt="Phloem Analytics" />
       <h1>About</h1>
       <p>Looking at how energy moves through networks. Kinda like in trees.</p>
-      <p>An adventure in power flow analysis, hubris, and vibe coding.</p>
+      <p>An adventure in power flow analysis, javascript, and hubris.</p>
     </div>
   )
 }

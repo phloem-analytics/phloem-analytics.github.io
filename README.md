@@ -1,14 +1,5 @@
 # Phloem Analytics Website
 
-Official website for Phloem Analytics, built with React and Vite, hosted on GitHub Pages.
-
-## Features
-
-- **Single Page Application**: Client-side routing using React state management
-- **Dark/Light Theme**: Theme toggle with persistent preference
-- **Responsive Design**: Mobile-friendly layout with adaptive navigation
-- **Reports System**: Dynamic report loading with individual JSX files for easy content management
-
 ## Development
 
 ### Installation
@@ -103,6 +94,3 @@ export default {
 - **ESLint** - Code linting
 - **gh-pages** - GitHub Pages deployment
 
-## License
-
-MIT

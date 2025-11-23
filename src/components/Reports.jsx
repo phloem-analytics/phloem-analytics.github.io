@@ -77,7 +77,7 @@ function Reports() {
     <div className="content-section">
       <div className="reports-container">
         <h2>Reports</h2>
-        <p>Explore our collection of white papers and research reports on various technical topics.</p>
+        <p>A place for white papers and reports.</p>
 
         <div className="reports-grid">
           {reportsData.map((report) => (
